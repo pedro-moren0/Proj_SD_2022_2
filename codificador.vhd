@@ -33,5 +33,6 @@ begin
 			a <= a(0 downto 58) & '0'; -- left shift
 		end if;
 	end process;
+	valid_out <= '1';
 end Comportamental;
 
