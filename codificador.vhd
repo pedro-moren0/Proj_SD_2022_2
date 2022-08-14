@@ -11,8 +11,8 @@ entity codificador
 end entity codificador;
 
 architecture Comportamental of codificador is
-	signal a: std_logic_vector(0 downto 59) := (others => '0'); --inicializa o vetor com '0's
-	signal s: std_logic_vector(0 downto 5);
+	signal a: std_logic_vector(0 to 59) := (others => '0'); --inicializa o vetor com '0's
+	signal s: std_logic_vector(0 to 5) := "000000";
 	signal P: std_logic;
 begin
 	cod_process: process(clk)
@@ -30,7 +30,7 @@ begin
 			end if;
 			-- this might be a problem
 			output <= a(0);
-			a <= a(0 downto 58) & '0'; -- left shift
+			a <= a(0 to 58) & '0'; -- left shift
 		end if;
 	end process;
 	valid_out <= '1';
