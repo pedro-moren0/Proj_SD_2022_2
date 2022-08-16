@@ -1,24 +1,31 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+library work;
+use work.all;
+
 entity codificador_tb is
+    generic(
+        in_size : integer := 6
+    );
 end codificador_tb;
 
 architecture arch of codificador_tb is
     component codificador is
         port(
-		clk : in std_logic;
-		input : in std_logic;
-		output : out std_logic;
-		valid_out : out std_logic
+            clk : in std_logic;
+            input : in std_logic;
+            output : out std_logic;
+            valid_out : out std_logic
 	    );
     end component;
     
-    signal input: std_logic_vector(0 to 5);
+    signal input: std_logic_vector(0 to in_size - 1);
     signal w: std_logic;
     signal output: std_logic;
     signal valid_out: std_logic;
 
+    signal valid_in: std_logic := '0';
     constant clk_period : time := 10 ns;
     signal clk: std_logic;
 
@@ -36,28 +43,34 @@ begin
         wait for clk_period/2;
     end process;
 
-    -- dut process
-    test: process
+    serial_input: process(clk)
+        variable i: integer := 0;
     begin
+        if clk'event and clk = '1' then
+            if valid_in = '1' then
+                w <= input(i mod in_size);
+                i := i + 1;
+            else
+                i := 0;
+            end if ;
+        end if ;
+    end process;
 
-        input <= "101011";
-        for i in input'range loop
-            w <= input(i);
-            wait for clk_period;
-        end loop;
+    dut_process: process
+    begin
+        
+        valid_in <= '1';
+        input <= "010101";
+        wait for clk_period * in_size;
 
-        input <= "010100";
-        for i in input'range loop
-            w <= input(i);
-            wait for clk_period;
-        end loop;
+        input <= "101010";
+        wait for clk_period * in_size;
 
-        input <= "111110";
-        for i in input'range loop
-            w <= input(i);
-            wait for clk_period;
-        end loop;
+        input <= "000001";
+        wait for clk_period * in_size;
+        wait for clk_period/2;
 
+        valid_in <= '0';
         wait;
     end process;
 end arch ; -- arch
