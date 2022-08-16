@@ -37,9 +37,9 @@ begin
     -- Clock process definition
     clk_process: process
     begin
-        clk <= '1';
-        wait for clk_period/2;
         clk <= '0';
+        wait for clk_period/2;
+        clk <= '1';
         wait for clk_period/2;
     end process;
 
@@ -60,13 +60,13 @@ begin
     begin
         
         valid_in <= '1';
-        input <= "010101";
+        input <= "101011";
         wait for clk_period * in_size;
 
-        input <= "101010";
+        input <= "010100";
         wait for clk_period * in_size;
 
-        input <= "000001";
+        input <= "111110";
         wait for clk_period * in_size;
         wait for clk_period/2;
 
