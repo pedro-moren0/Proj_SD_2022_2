@@ -1,0 +1,1 @@
+cat components.txt | xargs ghdl -a

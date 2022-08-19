@@ -1,0 +1,10 @@
+contador_3b.vhd
+decoder_8b.vhd
+disp_f.vhd
+disp_i.vhd
+disp_m.vhd
+flipflopD.vhd
+mod_reg_8b_serial.vhd
+paridade_impar_6b.vhd
+period_changer_6.vhd
+serial_reg_6b_parallel.vhd
