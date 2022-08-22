@@ -1,3 +1,10 @@
+-- Implementacao de um decoder de 8 bits.
+-- Para cada valor possivel na sequencia
+-- de 3 bits, e mapeado um vetor de 8 bits
+-- cujo valor e 1 em uma posicao e 0 nas demais.
+--
+-- Recebe um vetor de 3 bits.
+-- Retorna um vetor de 8 bits unico.
 library ieee;
 use ieee.std_logic_1164.all;
 

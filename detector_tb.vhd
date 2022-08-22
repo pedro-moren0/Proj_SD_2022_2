@@ -1,3 +1,4 @@
+-- testbench para detector
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -62,22 +63,22 @@ begin
     begin
         
         valid_in <= '1';
-        input <= "1010111"; --p=1
+        input <= "1010111"; --p=1 (certo)
         wait for clk_period * in_size;
 
-        input <= "0101000"; --p=1
+        input <= "0101000"; --p=1 (errado)
         wait for clk_period * in_size;
 
-        input <= "1111100"; --p=0
+        input <= "1111100"; --p=0 (certo)
         wait for clk_period * in_size;
 
-        input <= "1100111"; --p=1
+        input <= "1100111"; --p=1 (certo)
         wait for clk_period * in_size;
 
-        input <= "1000100"; --p=1
+        input <= "1000100"; --p=1 (errado)
         wait for clk_period * in_size;
 
-        input <= "0001111"; --p=0
+        input <= "0001111"; --p=0 (errado)
         wait for clk_period * in_size;
 
         valid_in <= '0';

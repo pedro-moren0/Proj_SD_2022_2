@@ -1,3 +1,11 @@
+-- Gera um sinal de clock mais lento com base
+-- em um sinal de clock de entrada. O periodo
+-- do sinal de saida equivale a 6 periodos do
+-- sinal de entrada.
+--
+-- Recebe um sinal de clock.
+-- Retorna um sinal de clock mais lento conforme
+-- descricao.
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

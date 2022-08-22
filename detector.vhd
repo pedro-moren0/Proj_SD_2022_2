@@ -1,3 +1,8 @@
+-- Detector de erros de um pacote de 7 bits gerado
+-- pelo codificador. Recebe esse pacote serialmente,
+-- e retorna o pacote retirando o bit redundante, alem
+-- de indicar se o pacote da saida contem erros ou se
+-- ele e valido ou nao.
 library ieee;
 use ieee.std_logic_1164.all;
 

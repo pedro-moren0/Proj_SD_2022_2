@@ -1,3 +1,9 @@
+-- Implementa a logica de validacao de saida do detector.
+-- Gera uma onda de valor alto por 6 clocks, seguida por
+-- uma onda de valor baixo por um clock.
+--
+-- Recebe um sinal de clock.
+-- Retorna o sinal de validacao caracteristico do detector.
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

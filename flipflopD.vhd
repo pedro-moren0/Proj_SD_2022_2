@@ -1,3 +1,7 @@
+-- Implementacao de ff D com base nos codigos de aula.
+-- Recebe um sinal de clock e um bit de entrada.
+-- Retorna 0 no primeiro clock e o bit de entrada nos clocks
+-- seguintes.
 library ieee;
 use ieee.std_logic_1164.all;
 

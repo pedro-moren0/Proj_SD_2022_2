@@ -1,3 +1,8 @@
+-- Calcula a paridade impar para uma sequencia
+-- de 6 bits.
+--
+-- Recebe um vetor de 6 bits.
+-- Retorna a paridade impar da entrada.
 library ieee;
 use ieee.std_logic_1164.all;
 

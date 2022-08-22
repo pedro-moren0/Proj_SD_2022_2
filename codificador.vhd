@@ -1,3 +1,12 @@
+-- Adiciona um bit redundante a um pacote de 6 bits
+-- para possivel deteccao de erros de transmissao.
+-- O bit redundante e calculado utilizando a paridade impar
+-- do pacote. Esse modulo suporta o envio de ate 8 pacotes,
+-- apos isso ha overflow, indicado pela negacao de valid_out.
+--
+-- Recebe pacotes de 6 bits serialmente e um sinal de clock.
+-- Retorna o pacote mais paridade serialmente, e também um sinal
+-- valid_out, que valida a saida.
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

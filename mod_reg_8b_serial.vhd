@@ -1,3 +1,11 @@
+-- Registrador de entrada serial e saida serial modificado.
+-- Transmite um sinal primario serialmente, enquanto carrega
+-- um bit de um sinal secundario no background. O tamanho do
+-- pode ser ajustado ate 8 bits por meio de state.
+--
+-- Recebe um sinal main_in primario, um sinal sec_in secundario,
+-- um vetor de 8 bits de estado, e um sinal de clock.
+-- Retorna um sinal serial.
 library ieee;
 use ieee.std_logic_1164.all;
 

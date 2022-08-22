@@ -1,3 +1,10 @@
+-- Encapsulamento para a logica de conexao dos ffs
+-- do registrador modificado.
+--
+-- Recebe um sinal serial main, um sinal serial q1
+-- que vem de um ff, e um bit enable s1.
+-- Quando s1 esta alto, retorna main, e caso contrario,
+-- retorna o sinal q1.
 library ieee;
 use ieee.std_logic_1164.all;
 

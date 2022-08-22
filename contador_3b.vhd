@@ -1,3 +1,10 @@
+-- Contador de 3 bits. A cada subida do clock
+-- o contador e incrementado em 1 no bit mais
+-- a direita (menos significativo). Quando ha overflow
+-- o contador retorna a 000.
+--
+-- Recebe um sinal de clock.
+-- Retorna um vetor que varia entre 000 e 111.
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

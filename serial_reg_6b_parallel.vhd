@@ -1,3 +1,8 @@
+-- Registrador de entrada serial e saida paralela
+-- de 6 bits.
+--
+-- Recebe um input serial e um sinal de clock.
+-- Retorna um vetor de 6 bits a cada clock.
 library ieee;
 use ieee.std_logic_1164.all;
 

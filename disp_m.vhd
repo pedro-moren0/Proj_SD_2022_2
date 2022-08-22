@@ -1,3 +1,12 @@
+-- Encapsulamento para a logica de conexao dos ffs
+-- do registrador modificado.
+--
+-- Recebe um sinal serial main, um sinal serial secundario
+-- second, um sinal de memoria q1, e dois bits enable s1 e s2.
+-- Quando s1 alto e s2 baixo, retorna main,
+-- quando s1 baixo e s2 alto, retorna secundario,
+-- e quando ambos baixos, retorna q1.
+-- s1 e s2 altos nao ocorre.
 library ieee;
 use ieee.std_logic_1164.all;
 

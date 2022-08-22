@@ -1,3 +1,7 @@
+-- Implementa a logica de geracao de erro do detector.
+-- Recebe um valor correspondente a verificacao da paridade
+-- e um sinal de clock, e retorna esse valor prolongado por
+-- 7 clocks.
 library ieee;
 use ieee.std_logic_1164.all;
 

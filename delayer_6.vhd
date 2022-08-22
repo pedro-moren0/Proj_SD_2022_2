@@ -1,3 +1,8 @@
+-- Atrasa um sinal de entrada em 6 clocks utilizando
+-- ffs.
+
+-- Recebe um sinal de entrada e um sinal de clock.
+-- Retorna o sinal de entrada atrasado.
 library ieee;
 use ieee.std_logic_1164.all;
 
