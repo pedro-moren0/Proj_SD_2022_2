@@ -16,14 +16,20 @@ architecture arch of flipflop_tb is
     signal input: std_logic_vector(0 to 5);
     signal w: std_logic;
     signal output: std_logic;
+    signal output2: std_logic;
 
     signal valid_in: std_logic := '0';
     constant clk_period : time := 10 ns;
     signal clk: std_logic;
+    signal s1 : std_logic :='0';
 
 begin
     dut: flipflopD port map (
         clk => clk, D => w, Q => output
+    );
+
+    dut2: flipflopD port map (
+        clk => s1, D => w, Q => output2
     );
 
     -- Clock process definition
@@ -46,6 +52,12 @@ begin
                 i := 0;
             end if ;
         end if ;
+    end process;
+
+    s1_process: process
+    begin
+        wait until clk'event and clk = '1';
+        s1 <= not s1;
     end process;
 
     dut_process: process
