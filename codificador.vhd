@@ -61,6 +61,8 @@ architecture rtl of codificador is
 	signal pchanger_out : std_logic;
 	signal srg6_out : std_logic_vector(0 to 5);
 
+	signal teste : std_logic_vector(0 to 7);
+	signal overflow : std_logic := '1';
 begin
 	srg6: serial_reg_6b_parallel port map(
 		input => input,
@@ -96,7 +98,28 @@ begin
 		output => output
 	);
 
-	valid_out <= '1';
+	overflow_process: process(clk)
+		variable i : integer := 0;
+	begin
+		if clk'event and clk = '1' then
+			if contador_3b_out = "111" then
+				overflow <= '1';
+				i := 1;
+			elsif i = 0 then
+				overflow <= '0';
+			end if ;
+		end if ;
+	end process;
 
+	-- valid_out_process: process(clk)
+	-- begin
+	-- 	if clk'event and clk = '1' then
+	-- 		valid_out <= not overflow;
+	-- 	else
+	-- 		valid_out <
+	-- 	end if ;
+	-- end process;
+
+	valid_out <= not overflow;
 end rtl;
 

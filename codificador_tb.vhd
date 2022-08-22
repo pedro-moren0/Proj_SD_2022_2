@@ -60,17 +60,26 @@ begin
     begin
         
         valid_in <= '1';
-        input <= "101011";
+        input <= "101011"; --p=1
         wait for clk_period * in_size;
 
-        input <= "010100";
+        input <= "010100"; --p=1
         wait for clk_period * in_size;
 
-        input <= "111110";
+        input <= "111110"; --p=0
         wait for clk_period * in_size;
+
+        input <= "110011"; --p=1
+        wait for clk_period * in_size;
+
+        input <= "100010"; --p=1
+        wait for clk_period * in_size;
+
+        input <= "000111"; --p=0
+        wait for clk_period * in_size;
+        valid_in <= '0';
         wait for clk_period/2;
 
-        valid_in <= '0';
         wait;
     end process;
 end arch ; -- arch
